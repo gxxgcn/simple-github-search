@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/simple-github-search/static/css/main.27800fa8.chunk.css",
-    "main.js": "/simple-github-search/static/js/main.164570aa.chunk.js",
-    "main.js.map": "/simple-github-search/static/js/main.164570aa.chunk.js.map",
+    "main.js": "/simple-github-search/static/js/main.52720137.chunk.js",
+    "main.js.map": "/simple-github-search/static/js/main.52720137.chunk.js.map",
     "runtime-main.js": "/simple-github-search/static/js/runtime-main.67d0ab18.js",
     "runtime-main.js.map": "/simple-github-search/static/js/runtime-main.67d0ab18.js.map",
     "static/css/2.fc5a9450.chunk.css": "/simple-github-search/static/css/2.fc5a9450.chunk.css",
     "static/js/2.d5a9f2ff.chunk.js": "/simple-github-search/static/js/2.d5a9f2ff.chunk.js",
     "static/js/2.d5a9f2ff.chunk.js.map": "/simple-github-search/static/js/2.d5a9f2ff.chunk.js.map",
     "index.html": "/simple-github-search/index.html",
-    "precache-manifest.50400d00e679c098fe1c19548e01b064.js": "/simple-github-search/precache-manifest.50400d00e679c098fe1c19548e01b064.js",
+    "precache-manifest.4bb16bfcd30b4daf818dd97ce40defab.js": "/simple-github-search/precache-manifest.4bb16bfcd30b4daf818dd97ce40defab.js",
     "service-worker.js": "/simple-github-search/service-worker.js",
     "static/css/2.fc5a9450.chunk.css.map": "/simple-github-search/static/css/2.fc5a9450.chunk.css.map",
     "static/css/main.27800fa8.chunk.css.map": "/simple-github-search/static/css/main.27800fa8.chunk.css.map",
@@ -20,6 +20,6 @@
     "static/css/2.fc5a9450.chunk.css",
     "static/js/2.d5a9f2ff.chunk.js",
     "static/css/main.27800fa8.chunk.css",
-    "static/js/main.164570aa.chunk.js"
+    "static/js/main.52720137.chunk.js"
   ]
 }
