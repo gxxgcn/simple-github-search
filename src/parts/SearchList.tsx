@@ -94,7 +94,7 @@ export class SearchList extends React.Component<Props> {
 
         return (
             this.store.data && tip &&
-            <div style={{ fontSize: 24, color: '#24292E', fontWeight: 'bold', marginBottom: 16 }}>{tip}</div>
+            <h3 style={{ color: '#24292E', fontWeight: 'bold', marginBottom: 16 }}>{tip}</h3>
         );
     }
 
