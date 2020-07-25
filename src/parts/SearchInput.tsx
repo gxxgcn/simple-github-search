@@ -44,24 +44,26 @@ export class SearchInput extends React.Component<Props> {
                 {
                     this.showHistory && this.historyStore.history.length > 0 &&
                     <div
-                        style={{ zIndex: 99, position: 'absolute', top: 36, left: 0, right: 0, maxHeight: 200, backgroundColor: '#fff', boxShadow: 'rgb(51, 51, 51, 0.1) 0px 10px 12px' }}
+                        style={{ zIndex: 99, position: 'absolute', top: 36, left: 0, right: 0, backgroundColor: '#fff', boxShadow: 'rgb(51, 51, 51, 0.1) 0px 10px 12px' }}
                         onClick={e => e.nativeEvent.stopImmediatePropagation()}
                     >
-                        {this.historyStore.history.map(v => {
-                            return (
-                                <div
-                                    key={v}
-                                    style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '4px 12px', fontSize: '16px', color: '#666', cursor: 'pointer' }}
-                                    onClick={() => {
-                                        this.close();
-                                        this.input?.setValue(v);
-                                        store.setQ(v);
-                                    }}
-                                >
-                                    {v}
-                                </div>
-                            )
-                        })}
+                        <div style={{ overflow: 'auto', maxHeight: 180 }}>
+                            {this.historyStore.history.map(v => {
+                                return (
+                                    <div
+                                        key={v}
+                                        style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '4px 12px', fontSize: '16px', color: '#666', cursor: 'pointer' }}
+                                        onClick={() => {
+                                            this.close();
+                                            this.input?.setValue(v);
+                                            store.setQ(v);
+                                        }}
+                                    >
+                                        {v}
+                                    </div>
+                                )
+                            })}
+                        </div>
                         <div style={{ display: 'flex', flexDirection: 'row-reverse', padding: '4px 12px' }}>
                             <div style={{ color: '#666', cursor: 'pointer' }} onClick={e => {
                                 this.historyStore.clean();
@@ -76,6 +78,9 @@ export class SearchInput extends React.Component<Props> {
 
     onChange = _.debounce((val: string) => {
         const { store } = this.props;
+        if (!val) {
+            return;
+        }
         this.close();
         this.input?.blur();
         store.setQ(val);
