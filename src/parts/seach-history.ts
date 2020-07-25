@@ -1,7 +1,7 @@
 import { observable, action } from "mobx";
 
 export class SearchHistoryStore {
-    storageKey = window.location.hostname;
+    storageKey = window.location.hostname + 'search_history';
 
     @observable history: string[] = [];
 

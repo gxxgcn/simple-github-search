@@ -4,7 +4,6 @@ import { stringify } from 'query-string';
 import { parse } from "querystring";
 
 const endpoint = 'https://api.github.com/graphql';
-const accessToken = '3b96073eba661302b428a303d373b1884d37399d';
 
 const searchQuery = `
 query githubsearch($query: String!, $first: Int, $last: Int, $type: SearchType!, $after: String, $before: String) {
@@ -120,6 +119,8 @@ export class SearchStore {
     after?: string;
     before?: string;
 
+    accessToken?: string;
+
     @computed get pageInfo() {
         return this.data?.data.search.pageInfo;
     }
@@ -133,7 +134,9 @@ export class SearchStore {
         return 0;
     }
 
-    constructor(search: string) {
+    constructor(vars: { accessToken: string, search: string }) {
+        const { accessToken, search } = vars;
+        this.accessToken = accessToken;
         this.loadFromSearch(search);
     }
 
@@ -178,6 +181,10 @@ export class SearchStore {
     }
 
     @action search = () => {
+        if (!this.accessToken) {
+            console.error('token is missing');
+            return;
+        }
         this.loading = true;
         const variables = toJS({
             query: this.q,
@@ -191,7 +198,7 @@ export class SearchStore {
         Axios({
             url: endpoint,
             headers: {
-                Authorization: `Bearer ${accessToken}`
+                Authorization: `Bearer ${this.accessToken}`
             },
             method: 'POST',
             data: ({
