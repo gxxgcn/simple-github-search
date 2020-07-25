@@ -4,7 +4,7 @@ import { stringify } from 'query-string';
 import { parse } from "querystring";
 
 const endpoint = 'https://api.github.com/graphql';
-const accessToken = '5e9a1aca443a7b0ba782224e643a90d11a33685f';
+const accessToken = '3b96073eba661302b428a303d373b1884d37399d';
 
 const searchQuery = `
 query githubsearch($query: String!, $first: Int, $last: Int, $type: SearchType!, $after: String, $before: String) {
