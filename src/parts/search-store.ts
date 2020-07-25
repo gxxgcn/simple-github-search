@@ -161,6 +161,8 @@ export class SearchStore {
     @action setType = (type: string) => {
         this.type = type;
         this.data = undefined;
+        this.after = undefined;
+        this.before = undefined;
         setBrowserUrl({ type });
         this.search();
     }

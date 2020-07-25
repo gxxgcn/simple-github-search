@@ -31,7 +31,6 @@ export class SearchHistoryStore {
     }
 
     @action clean = () => {
-        console.log('clean');
         this.history = [];
         this.save();
     }

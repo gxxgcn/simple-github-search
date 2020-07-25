@@ -10,7 +10,6 @@ export class GithubConfig {
     }
 
     setGithubAccessToken(value: string) {
-        console.log('set token:', value)
         this.token = value;
         localStorage.setItem(this.storageKey, value);
     }
